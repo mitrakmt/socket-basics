@@ -3,22 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>Practicing Socket!</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
 
-    <a href="/index.html">Change my username</a>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 well">
+          <a href="/index.html">Change my username</a>
 
-    <h1 class="room-title"></h1>
+          <h1 class="room-title"></h1>
 
-    <div class="messages">
-      <!-- Messages will post in here -->
+          <ul class="messages list-group">
+            <!-- Messages will post in here -->
+          </ul>
+
+          <form id="message-form">
+            <div class="form-group">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <i class="glyphicon glyphicon-comment"></i>
+                </span>
+                <input type="text" name="message" class="form-control"/>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-block" />
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
 
-    <form id="message-form">
-      <input type="text" name="message" />
-      <input type="submit" />
-    </form>
-
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.4.8/socket.io.min.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
