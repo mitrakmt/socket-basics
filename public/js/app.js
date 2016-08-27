@@ -17,6 +17,12 @@ function getQueryVariable(variable) {
 $('.room-title').text(room);
 
 socket.on('connect', function () {
+  var $rooms = $('.rooms');
+  var $room = $('<li class="list-group-item"></li>')
+  rooms.forEach(function(room) {
+    $room.append('<p>' + room + '</p>')
+  })
+
   socket.emit('joinRoom', {
     name: name,
     room: room

@@ -33,8 +33,28 @@ function sendCurrentUsers(socket) {
   });
 }
 
+// This isn't currently working
+function displayLiveRooms(socket) {
+  var info = clientInfo[socket.id];
+  var rooms = [];
+
+  if (typeof info === 'undefined') {
+    return;
+  }
+
+  Object.keys(clientInfo).forEach(function (socketId) {
+    var userInfo = clientInfo[socketId];
+
+    if (rooms.indexOf(userInfo.room) !== -1) {
+      rooms.push(userInfo.room);
+      console.log(userInfo.room);
+    }
+  });
+}
+
 io.on('connection', function (socket) {
   console.log("User connected via socket.io");
+  displayLiveRooms(socket);
 
   socket.on('disconnect', function () {
     var userData = clientInfo[socket.id];
