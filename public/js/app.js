@@ -16,6 +16,8 @@ function getQueryVariable(variable) {
 
 $('.room-title').text(room);
 
+// Was creating a rooms array to loop through and list those on landing page
+
 socket.on('connect', function () {
   var $rooms = $('.rooms');
   var $room = $('<li class="list-group-item"></li>')
